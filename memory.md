@@ -1,8 +1,7 @@
 cd/var/www/pterodactyl
 nano package.json
 
-    "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=6144\" NODE_ENV=development webpack --progress",
-    "build:production": "yarn run clean && cross-env NODE_OPTIONS=\"--max-old-space-size=12288\" NODE_ENV=production webpack --mode production --progress"
+    "build:production": "yarn run clean && cross-env NODE_ENV=production NODE_OPTIONS=\"--max-old-space-size=4096 --openssl-legacy-provider\" ./node_modules/.bin/webpack --mode production",
 
 
 yarn run build:production --progress
